@@ -1,0 +1,13 @@
+.min-height-img{
+    /* min-height: 450px; */
+    position: relative;
+}
+.content{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    height: auto;
+    padding: 15px 25px;
+
+}
