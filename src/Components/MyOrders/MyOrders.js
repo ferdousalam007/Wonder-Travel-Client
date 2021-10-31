@@ -11,7 +11,7 @@ const MyOrders = () => {
         fetch(`https://dark-web-69066.herokuapp.com/myOrder/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setmyOrder(data));
-    }, [user.email,control]);
+    }, [user.email, control]);
     console.log(myOrder)
 
     const handleDelete = (id) => {
@@ -22,6 +22,7 @@ const MyOrders = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.deletedCount) {
+                    alert('calcel your ordr!');
                     setConrol(!control);
                 } else {
                     setConrol(false);

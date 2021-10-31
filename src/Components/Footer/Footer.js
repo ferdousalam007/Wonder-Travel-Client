@@ -11,7 +11,7 @@ const Footer = () => {
                     <Col>
                         <div className='py-3 px-4'>
 
-                            <img src={logo} alt="" />
+                        <h5 className='text-white'>WONDER TOURS</h5>
                             <p>What is travel and example?
                                 Travel is defined as the act of going on a trip or going on vacation. An example of travel is the act of going from New York to London. ... An example of travel is when you get on a bus or a plane.</p>
 

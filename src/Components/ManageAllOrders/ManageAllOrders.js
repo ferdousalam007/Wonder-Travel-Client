@@ -5,7 +5,6 @@ import './ManageAllOrders.css';
 const ManageAllOrders = () => {
     const [allOrder, setAllOrder] = useState([]);
     const [control, setConrol] = useState(false);
-    const [isUpdate, setIsUpdated] = useState(null);
 
     useEffect(() => {
         fetch('https://dark-web-69066.herokuapp.com/orders')
@@ -21,6 +20,7 @@ const ManageAllOrders = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.deletedCount) {
+                    alert('You want delete this order');
                     setConrol(!control);
                 } else {
                     setConrol(false);
@@ -28,32 +28,8 @@ const ManageAllOrders = () => {
             });
         // console.log(id);
     };
-    //status update
-    // useEffect(() => {
-    //     fetch(`https://dark-web-69066.herokuapp.com/singleProduct/${productId}`)
-    //       .then((res) => res.json())
-    //       .then((data) => setProduct(data));
-    //   }, [productId, isUpdate]);
 
-      
-    const handleStatus = (data) => {
-        
-        fetch(`https://dark-web-69066.herokuapp.com/orders/${data}`, {
-            method: "PUT",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((result) => {
-                if (result.modifiedCount) {
-                    setIsUpdated(true);
-                } else {
-                    setIsUpdated(false);
-                }
-            });
-        console.log(data);
-    };
-   
+
     return (
         <div className='container'>
             <h1 className='text-center'>All Orders{allOrder.length}</h1>
@@ -75,10 +51,11 @@ const ManageAllOrders = () => {
                                 <td>{order?.name}</td>
                                 <td>{order?.email}</td>
                                 <td>{order?.address}</td>
-                                
+
                                 <Button
-                                    onClick={() => handleStatus(order?._id)}
-                                    className='bg-button' variant="primary">normal</Button>
+                                    className='bg-button' variant="primary">pending
+                                </Button>
+
                                 <Button
                                     onClick={() => handleDelete(order._id)}
                                     className='bg-danger-btn' variant="primary">Delete</Button>

@@ -6,24 +6,17 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        const timeoutID = window.setTimeout(() => {
+        
             fetch('https://dark-web-69066.herokuapp.com/services')
                 .then(res => res.json())
                 .then(data => setServices(data))
-        }, 2000);
-
-        return () => window.clearTimeout(timeoutID);
 
     }, [])
     return (
         <div className='bg-light'>
             <Container className='py-5'>
                 <h1 className='text-center mb-5'>SERVICES</h1>
-                {/* {
-                    setTimeout(() => {
-
-                    }, 2000)
-                } */}
+               
                 <Row xs={1} md={3} className="g-4">
                     {
                         services.map(service => <Col key={service._id}>
