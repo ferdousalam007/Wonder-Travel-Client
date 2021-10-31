@@ -1,4 +1,4 @@
-# Project Title: Wonder Tours & Tavel
+# Project Title: Wonder Tours & Travel
 ## Project Short Description
 Wonder Tours & Tavel tour and travel based website.This provite tours and travel information with service.Six different service incluted with service buy for make tour many famous destination .Also provite service related  information. Admin can add more service and also cancel any kind order and pending.Customer can also add order or remove order.
 
